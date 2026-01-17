@@ -1,27 +1,98 @@
-# Solder Party KeebDeck Basic
+# Made of Waves — KeebDeck Basic (QMK + VIA)
 
-![solderparty/keebdeck_basic](imgur.com image replace me!)
+This repository contains the **Made of Waves** configuration for the **KeebDeck Basic**, including:
+- Updated **QMK firmware** sources
+- A matching **VIA layout definition** (JSON) for easy remapping
 
-*A short description of the keyboard/project*
+## Credit (Important 🧡)
 
-* Keyboard Maintainer: [Solder Party](https://github.com/solderparty)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+The **KeebDeck Basic** hardware and the original QMK keyboard definition are by **Solder Party**.
 
-Make example for this keyboard (after setting up your build environment):
+This repo is a **derivative configuration** (custom layout + VIA definition + firmware tweaks) built on top of Solder Party’s work and the broader QMK ecosystem.
 
-    make solderparty/keebdeck_basic:default
+- Original creator / maintainer: **Solder Party**  
+- Solder Party GitHub: https://github.com/solderparty  
+- QMK Firmware: https://github.com/qmk/qmk_firmware  
 
-Flashing example for this keyboard:
+If you're looking for the original upstream keyboard project and documentation, please start with Solder Party.
 
-    make solderparty/keebdeck_basic:default:flash
+---
 
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+## What’s in this repo?
 
-## Bootloader
+- `keebdeck_basic/`  
+  QMK keyboard definition + keymaps used by Made of Waves.
+- `keebdeck_basic/keymaps/default/`  
+  Standard “non-VIA” build target.
+- `keebdeck_basic/keymaps/via/`  
+  VIA-enabled build target (keymap is identical to `default`, the difference is build flags).
+- `via/keebdeck_basic_via.json`  
+  VIA definition JSON (layout sizing + matrix positions) for loading into the VIA app.
 
-Enter the bootloader in 3 ways:
+---
 
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
-* **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
-* **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
+## Building the firmware
+
+After setting up your QMK build environment:
+
+- Build the default (non-VIA) keymap:
+
+qmk compile -kb solderparty/keebdeck_basic -km default
+
+- Build the VIA-enabled keymap:
+
+qmk compile -kb solderparty/keebdeck_basic -km via
+
+If you prefer the classic make syntax:
+
+make solderparty/keebdeck_basic:default
+make solderparty/keebdeck_basic:via
+
+See:
+- QMK build tools setup: https://docs.qmk.fm/#/getting_started_build_tools
+- QMK make guide: https://docs.qmk.fm/#/getting_started_make_guide
+- New to QMK? https://https://doc.qmk.fm/#/newbs
+
+---
+
+## Flashing
+Example flashing commands:
+
+qmk flash -kb solderparty/keebdeck_basic -km default
+qmk flash -kb solderparty/keebdeck_basic -km via
+
+Or using make:
+
+make solderparty/keebdeck_basic:default:flash
+make solderparty/keebdeck_basic:via:flash
+
+## Via Setup
+This keyboard uses a custom VIA definition file.
+
+Open VIA
+
+Go to Settings and enable Show Design tab
+
+Go to Design → Load and select:
+
+via/keebdeck_basic_via.json
+
+After loading, you should see the Made of Waves layout and be able to remap keys.
+
+Bootloader
+
+Enter the bootloader in any of these ways:
+
+Bootmagic reset: Hold the key at (0,0) (usually Esc / top-left) while plugging in USB
+
+Physical reset: Press the reset button on the PCB (or short the reset pads if your board uses pads)
+
+Keycode reset: Use a key mapped to QK_BOOT (if present)
+
+## License
+
+This project includes QMK-derived firmware sources and follows the licensing expectations of that ecosystem.
+See the LICENSE file for details.
+
+If you want, I can also rewrite it with a slightly more “product page” feel (photos, features, matrix size, spacebar dome note, build badges) while keeping the credit section front-and-center.
+
