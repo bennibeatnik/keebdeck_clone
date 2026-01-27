@@ -3,7 +3,6 @@
         "pin": "A15",
         "levels": 8,
         "driver": "software"
-        "breathing": true
     },
     "bootloader": "stm32-dfu",
     "diode_direction": "ROW2COL",
