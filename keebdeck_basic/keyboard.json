@@ -3,6 +3,7 @@
         "pin": "A15",
         "levels": 8,
         "driver": "software"
+        "breathing": true
     },
     "bootloader": "stm32-dfu",
     "diode_direction": "ROW2COL",
@@ -18,16 +19,16 @@
         "mousekey": false,
         "nkro": false
     },
-    "keyboard_name": "KeebDeck Basic",
-    "maintainer": "solderparty",
-    "manufacturer": "Solder Party",
+    "keyboard_name": "KeebDeck Basic - Made of Waves",
+    "maintainer": "Made of Waves",
+    "manufacturer": "Solder Party (clone by Made of Waves)",
     "matrix_pins": {
         "ghost": true,
         "cols": ["A13", "A14", "B3", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "B0", "B1"],
         "rows": ["A0", "F1", "F0", "B8", "B5", "B4"]
     },
     "processor": "STM32F042",
-    "url": "https://keebdeck.solder.party/basic",
+    "url": "https://github.com/bennibeatnik/keebdeck_clone",
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x1209",
