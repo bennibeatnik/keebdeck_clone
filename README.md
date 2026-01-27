@@ -1,5 +1,7 @@
 # Made of Waves — KeebDeck Basic (QMK + VIA)
 
+![Made of Waves KeebDeck Basic](docs/mow_keebdeck_basic.jpg)
+
 This repository contains the **Made of Waves** configuration for the **KeebDeck Basic**, including:
 - Updated **QMK firmware** sources
 - A matching **VIA layout definition** (JSON) for easy remapping
@@ -33,20 +35,20 @@ If you're looking for the original upstream keyboard project and documentation, 
 
 ## Building the firmware
 
-After setting up your QMK build environment:
+After setting up your QMK build environment, navigate to the directory where you downloaded /keebdeck_basic:
 
 - Build the default (non-VIA) keymap:
 
-qmk compile -kb solderparty/keebdeck_basic -km default
+qmk compile -kb madeofwaves/keebdeck_basic -km default
 
 - Build the VIA-enabled keymap:
 
-qmk compile -kb solderparty/keebdeck_basic -km via
+qmk compile -kb madeofwaves/keebdeck_basic -km via
 
 If you prefer the classic make syntax:
 
-make solderparty/keebdeck_basic:default
-make solderparty/keebdeck_basic:via
+make madeofwaves/keebdeck_basic:default
+make madeofwaves/keebdeck_basic:via
 
 See:
 - QMK build tools setup: https://docs.qmk.fm/#/getting_started_build_tools
@@ -58,13 +60,13 @@ See:
 ## Flashing
 Example flashing commands:
 
-qmk flash -kb solderparty/keebdeck_basic -km default
-qmk flash -kb solderparty/keebdeck_basic -km via
+qmk flash -kb madeofwaves/keebdeck_basic -km default
+qmk flash -kb madeofwaves/keebdeck_basic -km via
 
 Or using make:
 
-make solderparty/keebdeck_basic:default:flash
-make solderparty/keebdeck_basic:via:flash
+make madeofwaves/keebdeck_basic:default:flash
+make madeofwaves/keebdeck_basic:via:flash
 
 ## Via Setup
 This keyboard uses a custom VIA definition file.
@@ -83,15 +85,37 @@ Bootloader
 
 Enter the bootloader in any of these ways:
 
-Bootmagic reset: Hold the key at (0,0) (usually Esc / top-left) while plugging in USB
-
-Physical reset: Press the reset button on the PCB (or short the reset pads if your board uses pads)
-
+Bootmagic reset: Hold the [Esc] key while plugging in USB
+or
+Physical reset: Press the reset button on the back of the PCB labeled "Boot"
+or
 Keycode reset: Use a key mapped to QK_BOOT (if present)
 
 ## License
 
-This project includes QMK-derived firmware sources and follows the licensing expectations of that ecosystem.
-See the LICENSE file for details.
+This project contains firmware sources derived from **QMK Firmware**, which is licensed under the **GNU General Public License v2.0 (GPL-2.0)**.
 
-If you want, I can also rewrite it with a slightly more "product page" feel (photos, features, matrix size, spacebar dome note, build badges) while keeping the credit section front-and-center.
+Accordingly:
+
+- All QMK-derived source files in this repository are provided under the terms of the GPL-2.0.
+- Any redistribution or modification of those files must comply with the GPL-2.0 license.
+
+---
+
+### Upstream work
+
+The original **KeebDeck Basic** hardware design and upstream QMK keyboard definition were created by **Solder Party**.
+
+This repository is a **derivative hardware and firmware adaptation** built on top of Solder Party’s original work and the QMK ecosystem.  
+All original copyrights and attributions are retained where applicable.
+
+---
+
+### Made of Waves additions
+
+Original contributions in this repository by **Made of Waves** (including firmware modifications, configuration, documentation, and layout definitions) are released for **free use**, modification, and redistribution, provided that:
+
+- Proper attribution is maintained
+- Upstream license requirements (including GPL-2.0 for QMK-derived code) are respected
+
+No warranty is provided. Use at your own risk.
