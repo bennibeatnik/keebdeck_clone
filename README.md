@@ -8,7 +8,7 @@ This repository contains the **Made of Waves** configuration for the **KeebDeck 
 
 The **KeebDeck Basic** hardware and the original QMK keyboard definition are by **Solder Party**.
 
-This repo is a **derivative configuration** (custom layout + VIA definition + firmware tweaks) built on top of Solder Party’s work and the broader QMK ecosystem.
+This repo is a **derivative configuration** (custom layout + VIA definition + firmware tweaks) built on top of Solder Party's work and the broader QMK ecosystem.
 
 - Original creator / maintainer: **Solder Party**  
 - Solder Party GitHub: https://github.com/solderparty  
@@ -18,12 +18,12 @@ If you're looking for the original upstream keyboard project and documentation, 
 
 ---
 
-## What’s in this repo?
+## What's in this repo?
 
 - `keebdeck_basic/`  
   QMK keyboard definition + keymaps used by Made of Waves.
 - `keebdeck_basic/keymaps/default/`  
-  Standard “non-VIA” build target.
+  Standard "non-VIA" build target.
 - `keebdeck_basic/keymaps/via/`  
   VIA-enabled build target (keymap is identical to `default`, the difference is build flags).
 - `via/keebdeck_basic_via.json`  
@@ -94,5 +94,4 @@ Keycode reset: Use a key mapped to QK_BOOT (if present)
 This project includes QMK-derived firmware sources and follows the licensing expectations of that ecosystem.
 See the LICENSE file for details.
 
-If you want, I can also rewrite it with a slightly more “product page” feel (photos, features, matrix size, spacebar dome note, build badges) while keeping the credit section front-and-center.
-
+If you want, I can also rewrite it with a slightly more "product page" feel (photos, features, matrix size, spacebar dome note, build badges) while keeping the credit section front-and-center.
